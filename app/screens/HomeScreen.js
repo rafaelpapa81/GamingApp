@@ -1,3 +1,4 @@
+import React from 'react';
 import { Text, View } from "react-native";
 
 function Home() {
@@ -7,3 +8,5 @@ function Home() {
         </View>
     );
 }
+
+export default Home;

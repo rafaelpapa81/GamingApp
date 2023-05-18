@@ -1,3 +1,4 @@
+import React from 'react';
 //import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -16,7 +17,7 @@ import colors from '../config/colors';
 import GamingImg from '../assets/gaming.svg';
 //import ButterflyImg from './app/assets/floral-butterfly.svg';
 
-function Main() {
+function Main({navigation}) {
 
     //-----------------------
     // load font
@@ -39,7 +40,7 @@ function Main() {
             <GamingImg width={300} height={300} style={styles.mainImg}/>
         </View>
         {/*<ButterflyImg width={300} height={300} fill={'red'}/>*/}
-        <TouchableOpacity style={styles.letsGoButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.letsGoButton}>
             <Text style={styles.arrowFwButton}>Let's Begin</Text>
             <MaterialIcons name="arrow-forward-ios" size={22} color='#fff' />
         </TouchableOpacity>
@@ -86,3 +87,5 @@ const styles = StyleSheet.create({
         color: colors.primary,
     },
 });
+
+export default Main;
