@@ -1,5 +1,6 @@
 //import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 //import Svg, { Path } from "react-native-svg"
 
 // icons
@@ -13,7 +14,7 @@ import colors from './app/config/colors';
 
 // svg
 import GamingImg from './app/assets/gaming.svg';
-import ButterflyImg from './app/assets/floral-butterfly.svg';
+//import ButterflyImg from './app/assets/floral-butterfly.svg';
 
 export default function App() {
 
@@ -30,12 +31,14 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      <View style={styles.containerText}>
         <Text style={styles.mainTitleText}>GAMEON</Text>
         {/*<StatusBar style="auto" />*/}
       </View>
-      <GamingImg width={300} height={300}/>
-      <ButterflyImg width={300} height={300} fill={'red'}/>
+      <View style={styles.containerImg}>
+        <GamingImg width={300} height={300} style={styles.mainImg}/>
+      </View>
+      {/*<ButterflyImg width={300} height={300} fill={'red'}/>*/}
       <TouchableOpacity style={styles.letsGoButton}>
         <Text style={styles.arrowFwButton}>Let's Begin</Text>
         <MaterialIcons name="arrow-forward-ios" size={22} color='#fff' />
@@ -57,6 +60,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  containerImg: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  containerText: {
+    marginTop: 20,
+  },
   letsGoButton: {
     backgroundColor: colors.secondary,
     padding: 20,
@@ -64,10 +75,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 50,
   },
   mainImg: {
-    width: 300,
-    height: 300,
+    transform: [{rotate: '-15deg'}],
   },
   mainTitleText: {
     fontSize: 30,
