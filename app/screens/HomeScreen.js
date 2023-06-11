@@ -1,9 +1,12 @@
 import React from 'react';
-import { ImageBackground, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // fonts
 import { useFonts } from 'expo-font';
+
+// icons
+import FeatherIcon from 'react-native-vector-icons/Feather';
 
 function Home() {
 
@@ -29,6 +32,15 @@ function Home() {
                         imageStyle={{borderRadius:25}}
                     />
                 </View>
+                <View style={styles.containerSearch}>
+                    <FeatherIcon 
+                        name='search' 
+                        size={20}
+                        color="#C6C6C6"
+                        style={styles.featherIcon} />
+                    <TextInput placeholder='Search' />
+
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
@@ -39,10 +51,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
+    containerSearch: {
+        flexDirection: 'row',
+    },
     containerUserProfileSection: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 20,
+    },
+    featherIcon: {
+        marginRight:5,
     },
     userProfilePic:{
         width: 35,
