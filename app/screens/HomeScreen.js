@@ -70,6 +70,7 @@ function Home() {
                     renderItem={renderBanner}
                     sliderWidth={windowWidth - 40} // subtract the padding 20 each side
                     itemWidth={300}
+                    loop={true}
                 />
             </ScrollView>
         </SafeAreaView>
