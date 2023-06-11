@@ -8,7 +8,21 @@ import { useFonts } from 'expo-font';
 // icons
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
+// carousel
+import Carousel from 'react-native-snap-carousel';
+
+// components
+import BannerSlider from '../components/BannerSlider';
+import {sliderData} from '../model/data';
+
+// utils
+import {windowWidth} from '../utils/Dimensions';
+
 function Home() {
+
+    const renderBanner = ({item, index}) => {
+        return <BannerSlider data={item} />
+    }
 
     //-----------------------
     // load font
@@ -49,6 +63,14 @@ function Home() {
                         <Text>See All</Text>
                     </TouchableOpacity>
                 </View>
+
+                <Carousel
+                    ref={(c) => { this._carousel = c; }}
+                    data={sliderData}
+                    renderItem={renderBanner}
+                    sliderWidth={windowWidth - 40} // subtract the padding 20 each side
+                    itemWidth={300}
+                />
             </ScrollView>
         </SafeAreaView>
     );
