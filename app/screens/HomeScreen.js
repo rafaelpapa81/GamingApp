@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // fonts
@@ -24,7 +24,8 @@ function Home() {
     return (
         <SafeAreaView style={styles.containerMain}>
             <ScrollView style={{padding:20}}>
-                <View style={styles.containerUserProfileSection}>
+                
+                <View style={styles.containerUserProfile}>
                     <Text style={styles.userProfileText}>Hello Rafael Papa</Text>
                     <ImageBackground 
                         source={require('../assets/images/user-profile.jpg')}
@@ -32,6 +33,7 @@ function Home() {
                         imageStyle={{borderRadius:25}}
                     />
                 </View>
+
                 <View style={styles.containerSearch}>
                     <FeatherIcon 
                         name='search' 
@@ -39,7 +41,13 @@ function Home() {
                         color="#C6C6C6"
                         style={styles.featherIcon} />
                     <TextInput placeholder='Search' />
+                </View>
 
+                <View style={styles.containerUpcomingGames}>
+                    <Text style={styles.upcomingGamesText}>Upcoming Games</Text>
+                    <TouchableOpacity onPress={()=> {}}>
+                        <Text>See All</Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -59,7 +67,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 8,
     },
-    containerUserProfileSection: {
+    containerUpcomingGames: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginVertical: 15,
+    },
+    containerUserProfile: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 20,
@@ -71,8 +84,12 @@ const styles = StyleSheet.create({
         width: 35,
         height: 35,
     },
+    upcomingGamesText:{
+        fontSize: 18,
+        fontFamily:'Roboto-Medium',
+    },
     userProfileText:{
-        fontSize: 16,
+        fontSize: 18,
         fontFamily:'Roboto-Medium',
     },
 });
