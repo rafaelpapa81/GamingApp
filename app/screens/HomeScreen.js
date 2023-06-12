@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -15,13 +15,21 @@ import Carousel from 'react-native-snap-carousel';
 import BannerSlider from '../components/BannerSlider';
 import {sliderData} from '../model/data';
 
+import CustomSwitch from '../components/CustomSwitch';
+
 // utils
 import {windowWidth} from '../utils/Dimensions';
 
 function Home() {
 
+    const [gamesTab, setGamesTab] = useState(1);
+
     const renderBanner = ({item, index}) => {
         return <BannerSlider data={item} />
+    }
+
+    const onSelectSwitch = (value) => {
+        setGamesTab(value);
     }
 
     //-----------------------
@@ -72,6 +80,16 @@ function Home() {
                     itemWidth={300}
                     loop={true}
                 />
+                <View>
+                    <CustomSwitch 
+                        selectionMode={1} 
+                        option1={"Free to play"} 
+                        option2={"Paid games"}
+                        onSelectSwitch={onSelectSwitch}
+                    />
+                </View>
+                {gamesTab == 1 && <Text>Free Games</Text>}
+                {gamesTab == 2 && <Text>Paid Games</Text>}
             </ScrollView>
         </SafeAreaView>
     );
