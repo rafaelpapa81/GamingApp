@@ -16,3 +16,8 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+//snippets
+
+//imr > import React from 'react';
+//slc > functional component

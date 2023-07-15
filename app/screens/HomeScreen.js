@@ -19,6 +19,7 @@ import CustomSwitch from '../components/CustomSwitch';
 
 // utils
 import {windowWidth} from '../utils/Dimensions';
+import ListItem from '../components/ListItem';
 
 function Home() {
 
@@ -88,7 +89,7 @@ function Home() {
                         onSelectSwitch={onSelectSwitch}
                     />
                 </View>
-                {gamesTab == 1 && <Text>Free Games</Text>}
+                {gamesTab == 1 && <ListItem/>}
                 {gamesTab == 2 && <Text>Paid Games</Text>}
             </ScrollView>
         </SafeAreaView>
