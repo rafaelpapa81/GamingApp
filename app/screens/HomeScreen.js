@@ -80,7 +80,7 @@ function Home() {
                     itemWidth={300}
                     loop={true}
                 />
-                <View>
+                <View style={{marginVertical:20}}>
                     <CustomSwitch 
                         selectionMode={1} 
                         option1={"Free to play"} 
