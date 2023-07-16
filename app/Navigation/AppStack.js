@@ -9,6 +9,9 @@ import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator();
 
+// import components
+import CustomDrawer from '../components/CustomDrawer';
+
 // import screens
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
@@ -17,9 +20,13 @@ import MomentsScreen from '../screens/MomentsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 
+
 const AppStack = () => {
     return (
-        <Drawer.Navigator initialRouteName='Onboarding' screenOptions={{headerShown: false}}>
+        <Drawer.Navigator 
+            screenOptions={{headerShown: false}}
+            drawerContent={props => <CustomDrawer {...props}/>}
+        >
             <Drawer.Screen name="Home" component={HomeScreen} />
             <Drawer.Screen name="Profile" component={ProfileScreen} />
             <Drawer.Screen name="Messages" component={MessagesScreen} />
