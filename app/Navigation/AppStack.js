@@ -9,6 +9,9 @@ import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator();
 
+// icons
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
+
 // import components
 import CustomDrawer from '../components/CustomDrawer';
 
@@ -27,7 +30,11 @@ const AppStack = () => {
             screenOptions={{headerShown: false}}
             drawerContent={props => <CustomDrawer {...props}/>}
         >
-            <Drawer.Screen name="Home" component={HomeScreen} />
+            <Drawer.Screen name="Home" component={HomeScreen} options={{
+                drawerIcon: ({color}) => (
+                    <IoniconsIcon name='home-outline' size={22} color={color}/>
+                )
+            }}/>
             <Drawer.Screen name="Profile" component={ProfileScreen} />
             <Drawer.Screen name="Messages" component={MessagesScreen} />
             <Drawer.Screen name="Moments" component={MomentsScreen} />
