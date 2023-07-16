@@ -13,7 +13,7 @@ import Carousel from 'react-native-snap-carousel';
 
 // components
 import BannerSlider from '../components/BannerSlider';
-import {sliderData} from '../model/data';
+import {freeGames, paidGames, sliderData} from '../model/data';
 
 import CustomSwitch from '../components/CustomSwitch';
 
@@ -89,8 +89,29 @@ function Home() {
                         onSelectSwitch={onSelectSwitch}
                     />
                 </View>
-                {gamesTab == 1 && <ListItem/>}
-                {gamesTab == 2 && <Text>Paid Games</Text>}
+                {gamesTab == 1 && 
+                    freeGames.map(item => (
+                        <ListItem 
+                            key={item.id} 
+                            photo={item.poster} 
+                            title={item.title} 
+                            subTitle={item.subtitle}
+                            isFree={item.isFree}
+                        />
+                    ))
+                }
+                {gamesTab == 2 && 
+                    paidGames.map(item => (
+                        <ListItem 
+                            key={item.id} 
+                            photo={item.poster} 
+                            title={item.title} 
+                            subTitle={item.subtitle}
+                            isFree={item.isFree}
+                            price={item.price}
+                        />
+                    ))
+                }
             </ScrollView>
         </SafeAreaView>
     );

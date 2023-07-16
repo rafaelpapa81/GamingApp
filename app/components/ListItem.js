@@ -1,19 +1,26 @@
 import React from 'react';
 import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
 
-function ListItem() {
+function ListItem({photo, title, subTitle, isFree, price}) {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.imgContainer}>
-                <Image source={require('../assets/images/spiderman.webp')} style={styles.imgIcon} />
+                <Image source={photo} style={styles.imgIcon} />
                 <View>
-                    <Text style={styles.imgText}>Marvel</Text>
-                    <Text style={{...styles.imgText, textTransform: 'uppercase'}}>Spider-Man</Text>
+                    <Text style={styles.imgText}>
+                        {subTitle}
+                    </Text>
+                    <Text style={{...styles.imgText, textTransform: 'uppercase'}}>
+                        {title}
+                    </Text>
                 </View>
             </View>
 
             <TouchableOpacity style={styles.playButtonContainer}>
-                <Text style={styles.playButtonText}>Play</Text>
+                <Text style={styles.playButtonText}>
+                    {isFree == 'Yes' && 'Play'}
+                    {isFree == 'No' && price}
+                </Text>
             </TouchableOpacity>
 
         </View>
