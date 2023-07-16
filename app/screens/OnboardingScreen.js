@@ -17,7 +17,7 @@ import colors from '../config/colors';
 import GamingImg from '../assets/gaming.svg';
 //import ButterflyImg from './app/assets/floral-butterfly.svg';
 
-function Main({navigation}) {
+function OnboardingScreen({navigation}) {
 
     //-----------------------
     // load font
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Main;
+export default OnboardingScreen;
