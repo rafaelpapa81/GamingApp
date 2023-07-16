@@ -38,7 +38,10 @@ const CustomDrawer = (props) => {
                         <FontAwesome5 name='coins' size={14} color={'#fff'}/>
                     </View>
                 </ImageBackground>
-                <DrawerItemList {...props} />
+
+                <View style={styles.drawerListItems}>
+                    <DrawerItemList {...props} />
+                </View>
             </DrawerContentScrollView>
             <View>
                 <Text>Our Custom Text</Text>
@@ -72,6 +75,11 @@ const styles = StyleSheet.create({
         fontFamily:'Roboto-Regular',
         marginRight: 5,
     },
+    drawerListItems:{
+        flex: 1,
+        backgroundColor: '#fff',
+        paddingTop: 10,
+    }
 
 })
 
