@@ -27,8 +27,8 @@ import SettingsScreen from '../screens/SettingsScreen';
 const AppStack = () => {
     return (
         <Drawer.Navigator 
-            screenOptions={{headerShown: false}}
             drawerContent={props => <CustomDrawer {...props}/>}
+            screenOptions={{headerShown: false, drawerLabelStyle: {marginLeft: -25}}}
         >
             <Drawer.Screen name="Home" component={HomeScreen} options={{
                 drawerIcon: ({color}) => (
