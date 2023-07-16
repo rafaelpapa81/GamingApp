@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native'
+import { View, Text, ImageBackground, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 // fonts
@@ -30,6 +30,7 @@ const CustomDrawer = (props) => {
                 {...props}
                 contentContainerStyle={{backgroundColor: '#8200d6'}}
             >
+                {/* header */}
                 <ImageBackground source={require('../assets/images/menu-bg.jpeg')} style={styles.imageBackground}>
                     <Image source={require('../assets/images/user-profile.jpg')} style={styles.imageProfile}/>
                     <Text style={styles.userName}>John Doe</Text>
@@ -39,12 +40,24 @@ const CustomDrawer = (props) => {
                     </View>
                 </ImageBackground>
 
+                {/*  list item */}
                 <View style={styles.drawerListItems}>
                     <DrawerItemList {...props} />
                 </View>
             </DrawerContentScrollView>
-            <View>
-                <Text>Our Custom Text</Text>
+            <View style={styles.footerContainer}>
+                <TouchableOpacity onPress={()=>{}} style={{paddingVertical:15}}>
+                    <View style={styles.footerListItemContainer}>
+                        <IoniconsIcon name='share-social-outline' size={22}/>
+                        <Text style={styles.footerTextItem}>Tell a Friend</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>{}} style={{paddingVertical:15}}>
+                    <View style={styles.footerListItemContainer}>
+                        <IoniconsIcon name='exit-outline' size={22}/>
+                        <Text style={styles.footerTextItem}>Sign Out</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
 
         </View>
@@ -79,7 +92,21 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         paddingTop: 10,
-    }
+    },
+    footerContainer:{
+        padding: 20,
+        borderTopWidth: 1,
+        borderTopColor: '#ccc',
+    },
+    footerTextItem:{
+        fontSize: 15,
+        fontFamily:'Roboto-Medium',
+        marginLeft: 5,
+    },
+    footerListItemContainer:{
+        flexDirection: 'row', 
+        alignItems: 'center',
+    },
 
 })
 
