@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
+import { windowWidth } from '../utils/Dimensions';
 
 function ListItem({photo, title, subTitle, isFree, price}) {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.imgContainer}>
                 <Image source={photo} style={styles.imgIcon} />
-                <View>
+                <View style={{width: windowWidth - 220}}>
                     <Text style={styles.imgText}>
                         {subTitle}
                     </Text>
-                    <Text style={{...styles.imgText, textTransform: 'uppercase'}}>
+                    <Text numberOfLines={1} style={{...styles.imgText, textTransform: 'uppercase'}}>
                         {title}
                     </Text>
                 </View>
