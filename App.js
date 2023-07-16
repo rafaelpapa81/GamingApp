@@ -1,12 +1,11 @@
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './app/screens/HomeScreen';
-import Onboarding from './app/screens/OnboardingScreen';
+// import navigation
+//   the stack will be chosen accordinly after authentication
 import AuthStack from './app/Navigation/AuthStack';
 import AppStack from './app/Navigation/AppStack';
 
-const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
