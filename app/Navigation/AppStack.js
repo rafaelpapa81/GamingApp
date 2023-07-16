@@ -32,6 +32,7 @@ const AppStack = () => {
                 headerShown: false,
                 drawerActiveBackgroundColor: '#aa18ea',
                 drawerActiveTintColor: '#fff', 
+                drawerInactiveTintColor: '#333',
                 drawerLabelStyle: {
                     marginLeft: -25,
                     fontFamily: 'Roboto-Medium',
