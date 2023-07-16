@@ -21,7 +21,7 @@ import CustomSwitch from '../components/CustomSwitch';
 import {windowWidth} from '../utils/Dimensions';
 import ListItem from '../components/ListItem';
 
-function Home({navigation}) {
+function HomeScreen({navigation}) {
 
     const [gamesTab, setGamesTab] = useState(1);
 
@@ -159,4 +159,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Home;
+export default HomeScreen;
