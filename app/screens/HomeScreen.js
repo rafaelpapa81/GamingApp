@@ -47,10 +47,10 @@ function HomeScreen({navigation}) {
     return (
         <SafeAreaView style={styles.containerMain}>
             <ScrollView style={{padding:20}}>
-                
+                {/* user profile icon */}
                 <View style={styles.containerUserProfile}>
                     <Text style={styles.userProfileText}>Hello Rafael Papa</Text>
-                    <TouchableOpacity onPress={()=>navigation.goBack()}>
+                    <TouchableOpacity onPress={()=>navigation.openDrawer()}>
                         <ImageBackground 
                             source={require('../assets/images/user-profile.jpg')}
                             style={styles.userProfilePic}
@@ -58,7 +58,8 @@ function HomeScreen({navigation}) {
                         />
                     </TouchableOpacity>
                 </View>
-
+                
+                {/* search */}
                 <View style={styles.containerSearch}>
                     <FeatherIcon 
                         name='search' 
@@ -67,14 +68,14 @@ function HomeScreen({navigation}) {
                         style={styles.featherIcon} />
                     <TextInput placeholder='Search' />
                 </View>
-
+                
+                {/* carousel */}
                 <View style={styles.containerUpcomingGames}>
                     <Text style={styles.upcomingGamesText}>Upcoming Games</Text>
                     <TouchableOpacity onPress={()=> {}}>
                         <Text>See All</Text>
                     </TouchableOpacity>
                 </View>
-
                 <Carousel
                     ref={(c) => { this._carousel = c; }}
                     data={sliderData}
@@ -83,6 +84,8 @@ function HomeScreen({navigation}) {
                     itemWidth={300}
                     loop={true}
                 />
+                
+                {/* switch selector */}
                 <View style={{marginVertical:20}}>
                     <CustomSwitch 
                         selectionMode={1} 
@@ -91,6 +94,8 @@ function HomeScreen({navigation}) {
                         onSelectSwitch={onSelectSwitch}
                     />
                 </View>
+
+                {/* dynamic part */}
                 {gamesTab == 1 && 
                     freeGames.map(item => (
                         <ListItem 
