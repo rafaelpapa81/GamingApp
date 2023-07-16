@@ -17,7 +17,8 @@ export default function App() {
   );
 }
 
-//snippets
+// snippets
 
-//imr > import React from 'react';
-//slc > functional component
+// imr > import React from 'react';
+// slc > functional component
+// https://marketplace.visualstudio.com/items?itemName=jundat95.react-native-snippet
