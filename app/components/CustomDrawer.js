@@ -1,9 +1,25 @@
 import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
+// fonts
+import { useFonts } from 'expo-font';
+
 import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer'
 
 const CustomDrawer = (props) => {
+    
+    //-----------------------
+    // load font
+    const [fontsLoaded] = useFonts({
+        'Roboto-Medium': require('../assets/fonts/Roboto-Medium.ttf'),
+        'Roboto-Regular': require('../assets/fonts/Roboto-Regular.ttf'),
+    });
+
+    if (!fontsLoaded) {
+        return null;
+    }
+    //-----------------------
+
     return (
         <View style={styles.mainContainer}>
             <DrawerContentScrollView 
@@ -13,6 +29,7 @@ const CustomDrawer = (props) => {
                 <ImageBackground source={require('../assets/images/menu-bg.jpeg')} style={styles.imageBackground}>
                     <Image source={require('../assets/images/user-profile.jpg')} style={styles.imageProfile}/>
                     <Text style={styles.userName}>John Doe</Text>
+                    <Text style={styles.userBalance}>280 coins</Text>
                 </ImageBackground>
                 <DrawerItemList {...props} />
             </DrawerContentScrollView>
@@ -41,6 +58,11 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
         fontFamily:'Roboto-Medium',
+        marginBottom: 5,
+    },
+    userBalance:{
+        color: '#fff',
+        fontFamily:'Roboto-Regular',
     },
 
 })
