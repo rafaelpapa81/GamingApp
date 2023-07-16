@@ -35,10 +35,26 @@ const AppStack = () => {
                     <IoniconsIcon name='home-outline' size={22} color={color}/>
                 )
             }}/>
-            <Drawer.Screen name="Profile" component={ProfileScreen} />
-            <Drawer.Screen name="Messages" component={MessagesScreen} />
-            <Drawer.Screen name="Moments" component={MomentsScreen} />
-            <Drawer.Screen name="Settings" component={SettingsScreen} />
+            <Drawer.Screen name="Profile" component={ProfileScreen} options={{
+                drawerIcon: ({color}) => (
+                    <IoniconsIcon name='person-outline' size={22} color={color}/>
+                )
+            }}/>
+            <Drawer.Screen name="Messages" component={MessagesScreen} options={{
+                drawerIcon: ({color}) => (
+                    <IoniconsIcon name='chatbox-ellipses-outline' size={22} color={color}/>
+                )
+            }}/>
+            <Drawer.Screen name="Moments" component={MomentsScreen} options={{
+                drawerIcon: ({color}) => (
+                    <IoniconsIcon name='timer-outline' size={22} color={color}/>
+                )
+            }}/>
+            <Drawer.Screen name="Settings" component={SettingsScreen} options={{
+                drawerIcon: ({color}) => (
+                    <IoniconsIcon name='settings-outline' size={22} color={color}/>
+                )
+            }}/>
         </Drawer.Navigator>
     )
 }
