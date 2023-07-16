@@ -4,6 +4,10 @@ import React from 'react'
 // fonts
 import { useFonts } from 'expo-font';
 
+// icons
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+
 import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer'
 
 const CustomDrawer = (props) => {
@@ -29,7 +33,10 @@ const CustomDrawer = (props) => {
                 <ImageBackground source={require('../assets/images/menu-bg.jpeg')} style={styles.imageBackground}>
                     <Image source={require('../assets/images/user-profile.jpg')} style={styles.imageProfile}/>
                     <Text style={styles.userName}>John Doe</Text>
-                    <Text style={styles.userBalance}>280 coins</Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={styles.userBalance}>280 coins</Text>
+                        <FontAwesome5 name='coins' size={14} color={'#fff'}/>
+                    </View>
                 </ImageBackground>
                 <DrawerItemList {...props} />
             </DrawerContentScrollView>
@@ -63,6 +70,7 @@ const styles = StyleSheet.create({
     userBalance:{
         color: '#fff',
         fontFamily:'Roboto-Regular',
+        marginRight: 5,
     },
 
 })
