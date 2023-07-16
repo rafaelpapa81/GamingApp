@@ -21,7 +21,7 @@ import CustomSwitch from '../components/CustomSwitch';
 import {windowWidth} from '../utils/Dimensions';
 import ListItem from '../components/ListItem';
 
-function Home() {
+function Home({navigation}) {
 
     const [gamesTab, setGamesTab] = useState(1);
 
@@ -50,11 +50,13 @@ function Home() {
                 
                 <View style={styles.containerUserProfile}>
                     <Text style={styles.userProfileText}>Hello Rafael Papa</Text>
-                    <ImageBackground 
-                        source={require('../assets/images/user-profile.jpg')}
-                        style={styles.userProfilePic}
-                        imageStyle={{borderRadius:25}}
-                    />
+                    <TouchableOpacity onPress={()=>navigation.goBack()}>
+                        <ImageBackground 
+                            source={require('../assets/images/user-profile.jpg')}
+                            style={styles.userProfilePic}
+                            imageStyle={{borderRadius:25}}
+                        />
+                    </TouchableOpacity>
                 </View>
 
                 <View style={styles.containerSearch}>
