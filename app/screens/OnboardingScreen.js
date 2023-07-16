@@ -40,7 +40,7 @@ function OnboardingScreen({navigation}) {
             <GamingImg width={300} height={300} style={styles.mainImg}/>
         </View>
         {/*<ButterflyImg width={300} height={300} fill={'red'}/>*/}
-        <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.letsGoButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.letsGoButton}>
             <Text style={styles.arrowFwButton}>Let's Begin</Text>
             <MaterialIcons name="arrow-forward-ios" size={22} color='#fff' />
         </TouchableOpacity>
