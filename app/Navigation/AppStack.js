@@ -28,18 +28,29 @@ const AppStack = () => {
     return (
         <Drawer.Navigator 
             drawerContent={props => <CustomDrawer {...props}/>}
-            screenOptions={{headerShown: false, drawerLabelStyle: {marginLeft: -25}}}
+            screenOptions={{
+                headerShown: false, 
+                drawerLabelStyle: {
+                    marginLeft: -25,
+                    fontFamily: 'Roboto-Medium',
+                    fontSize: 15
+                }
+            }}
         >
             <Drawer.Screen name="Home" component={HomeScreen} options={{
                 drawerIcon: ({color}) => (
                     <IoniconsIcon name='home-outline' size={22} color={color}/>
                 )
             }}/>
-            <Drawer.Screen name="Profile" component={ProfileScreen} options={{
-                drawerIcon: ({color}) => (
-                    <IoniconsIcon name='person-outline' size={22} color={color}/>
-                )
-            }}/>
+            <Drawer.Screen 
+                name="Profile" 
+                component={ProfileScreen} 
+                options={{
+                    drawerIcon: ({color}) => (
+                        <IoniconsIcon name='person-outline' size={22} color={color}/>
+                    )
+                }}
+            />
             <Drawer.Screen name="Messages" component={MessagesScreen} options={{
                 drawerIcon: ({color}) => (
                     <IoniconsIcon name='chatbox-ellipses-outline' size={22} color={color}/>
