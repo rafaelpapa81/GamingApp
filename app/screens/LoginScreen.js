@@ -63,6 +63,12 @@ const LoginScreen = () => {
                 <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
                     <GoogleSVG height={24} width={24} />
                 </TouchableOpacity>
+                <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                    <FacebookSVG height={24} width={24} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                    <TwitterSVG height={24} width={24} />
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
