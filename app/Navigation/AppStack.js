@@ -16,11 +16,13 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import CustomDrawer from '../components/CustomDrawer';
 
 // import screens
-import HomeScreen from '../screens/HomeScreen';
+// import HomeScreen from '../screens/HomeScreen'; // replaced by bottom TabNavigador component
 import ProfileScreen from '../screens/ProfileScreen';
 import MessagesScreen from '../screens/MessagesScreen';
 import MomentsScreen from '../screens/MomentsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+
+import TabNavigator from './TabNavigator';
 
 
 
@@ -40,7 +42,7 @@ const AppStack = () => {
                 }
             }}
         >
-            <Drawer.Screen name="Home" component={HomeScreen} options={{
+            <Drawer.Screen name="Home" component={TabNavigator} options={{
                 drawerIcon: ({color}) => (
                     <IoniconsIcon name='home-outline' size={22} color={color}/>
                 )

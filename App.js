@@ -26,6 +26,7 @@ export default function App() {
 //  -install extension: React Native Tools
 //  -install extension: ES7+ React/Redux/React-Native snippets
 
+// rnfes > reactNativeFunctionalExportComponent + reactNativeStylesheetStyle
 // rnfe > reactNativeFunctionalExportComponent
 // rnss > reactNativeStylesheetStyle
 // imr > import React from 'react';
