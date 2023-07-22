@@ -43,7 +43,10 @@ function HomeScreen({navigation}) {
         return null;
     }
     //-----------------------
-
+    const gameListMap = {
+        1:freeGames,
+        2:paidGames
+    }
     return (
         <SafeAreaView style={styles.containerMain}>
             <ScrollView style={{padding:20}}>
@@ -96,19 +99,8 @@ function HomeScreen({navigation}) {
                 </View>
 
                 {/* dynamic part */}
-                {gamesTab == 1 && 
-                    freeGames.map(item => (
-                        <ListItem 
-                            key={item.id} 
-                            photo={item.poster} 
-                            title={item.title} 
-                            subTitle={item.subtitle}
-                            isFree={item.isFree}
-                        />
-                    ))
-                }
-                {gamesTab == 2 && 
-                    paidGames.map(item => (
+                { 
+                    gameListMap[gamesTab].map(item => (
                         <ListItem 
                             key={item.id} 
                             photo={item.poster} 
