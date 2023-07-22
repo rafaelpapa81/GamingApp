@@ -31,6 +31,7 @@ const TabNavigator = () => {
             }}/>
             <Tab.Screen name='Cart' component={CartScreen} options={{
                 tabBarBadge: 3,
+                tabBarBadgeStyle: {backgroundColor: 'yellow'},
                 tabBarIcon: ({color, size}) => (
                     <FeatherIcon name='shopping-bag' color={color} size={size} />
                 )
