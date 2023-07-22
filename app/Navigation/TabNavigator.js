@@ -21,7 +21,8 @@ const TabNavigator = () => {
             headerShown: false,
             tabBarShowLabel: false,
             tabBarStyle: {backgroundColor: '#AD40AF'},
-            tabBarInactiveTintColor: '#fff'
+            tabBarInactiveTintColor: '#fff',
+            tabBarActiveTintColor: 'yellow'
         }}>
             <Tab.Screen name='Home2' component={HomeScreen} options={{
                 tabBarIcon: ({color, size}) => (
