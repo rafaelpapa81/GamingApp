@@ -9,8 +9,11 @@ import { useFonts } from 'expo-font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
-// images
+// svg images
 import LoginSVG from '../assets/images/misc/login.svg';
+import GoogleSVG from '../assets/images/misc/google.svg';
+import FacebookSVG from '../assets/images/misc/facebook.svg';
+import TwitterSVG from '../assets/images/misc/twitter.svg';
 
 const LoginScreen = () => {
 
@@ -55,6 +58,11 @@ const LoginScreen = () => {
                 
                 {/* alternative login msg */}
                 <Text style={styles.alterLoginText}>Or, login with ...</Text>
+
+                {/* social media icons */}
+                <TouchableOpacity onPress={()=>{}}>
+                    <GoogleSVG height={24} width={24} />
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
