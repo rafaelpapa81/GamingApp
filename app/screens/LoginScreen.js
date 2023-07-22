@@ -60,15 +60,18 @@ const LoginScreen = () => {
                 <Text style={styles.alterLoginText}>Or, login with ...</Text>
 
                 {/* social media icons */}
-                <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
-                    <GoogleSVG height={24} width={24} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
-                    <FacebookSVG height={24} width={24} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
-                    <TwitterSVG height={24} width={24} />
-                </TouchableOpacity>
+                <View style={styles.socialMediaContainer}>
+                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                        <GoogleSVG height={24} width={24} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                        <FacebookSVG height={24} width={24} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                        <TwitterSVG height={24} width={24} />
+                    </TouchableOpacity>
+                </View>
+                
             </View>
         </SafeAreaView>
     )
@@ -136,6 +139,9 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 30,
         paddingVertical: 10,
+    }, 
+    socialMediaContainer:{
+        flexDirection: 'row',
     },  
     
 })
