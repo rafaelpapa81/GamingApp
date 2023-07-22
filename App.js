@@ -33,3 +33,6 @@ export default function App() {
 // slc > functional component
 // https://marketplace.visualstudio.com/items?itemName=jundat95.react-native-snippet
 
+// icons
+//   - react native vector icons
+//   - https://github.com/oblador/react-native-vector-icons

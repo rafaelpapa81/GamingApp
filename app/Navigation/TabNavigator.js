@@ -26,8 +26,16 @@ const TabNavigator = () => {
                     <IoniconsIcon name='home-outline' color={color} size={size} />
                 )
             }}/>
-            <Tab.Screen name='Cart' component={CartScreen} />
-            <Tab.Screen name='Favorite' component={FavoriteScreen} />
+            <Tab.Screen name='Cart' component={CartScreen} options={{
+                tabBarIcon: ({color, size}) => (
+                    <FeatherIcon name='shopping-bag' color={color} size={size} />
+                )
+            }}/>
+            <Tab.Screen name='Favorite' component={FavoriteScreen} options={{
+                tabBarIcon: ({color, size}) => (
+                    <IoniconsIcon name='heart-outline' color={color} size={size} />
+                )
+            }}/>
         </Tab.Navigator>
     );
 
