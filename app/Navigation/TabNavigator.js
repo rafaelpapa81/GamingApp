@@ -1,4 +1,10 @@
 import React from 'react';
+
+// navigators
+
+// this one manages the play/price button
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// this one manages the bottom icons 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
@@ -6,14 +12,26 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
+import GameDetailsScreen from '../screens/GameDetailsScreen';
 
 // icons
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
+// create the play/price button navigation to game-details
+const Stack = createNativeStackNavigator();
 
 // create bottom tab navigator
 const Tab = createBottomTabNavigator();
+
+const HomeStack = () => {
+    return (
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="GameDetails" component={GameDetailsScreen} />
+        </Stack.Navigator>
+    )
+}
 
 const TabNavigator = () => {
     return (
@@ -24,7 +42,7 @@ const TabNavigator = () => {
             tabBarInactiveTintColor: '#fff',
             tabBarActiveTintColor: 'yellow'
         }}>
-            <Tab.Screen name='Home2' component={HomeScreen} options={{
+            <Tab.Screen name='Home2' component={HomeStack} options={{
                 tabBarIcon: ({color, size}) => (
                     <IoniconsIcon name='home-outline' color={color} size={size} />
                 )

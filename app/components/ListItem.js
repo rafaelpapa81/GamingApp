@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
 import { windowWidth } from '../utils/Dimensions';
 
-function ListItem({photo, title, subTitle, isFree, price}) {
+function ListItem({photo, title, subTitle, isFree, price, onPress}) {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.imgContainer}>
@@ -17,7 +17,7 @@ function ListItem({photo, title, subTitle, isFree, price}) {
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.playButtonContainer}>
+            <TouchableOpacity onPress={onPress} style={styles.playButtonContainer}>
                 <Text style={styles.playButtonText}>
                     {isFree == 'Yes' && 'Play'}
                     {isFree == 'No' && price}

@@ -108,6 +108,7 @@ function HomeScreen({navigation}) {
                             subTitle={item.subtitle}
                             isFree={item.isFree}
                             price={item.price}
+                            onPress={()=> navigation.navigate('GameDetails')}
                         />
                     ))
                 }
