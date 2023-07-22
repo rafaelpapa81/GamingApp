@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
     return (
         <Tab.Navigator>
-            <Tab.Screen name='Home' component={HomeScreen} />
+            <Tab.Screen name='Home2' component={HomeScreen} />
             <Tab.Screen name='Cart' component={CartScreen} />
             <Tab.Screen name='Favorite' component={FavoriteScreen} />
         </Tab.Navigator>
