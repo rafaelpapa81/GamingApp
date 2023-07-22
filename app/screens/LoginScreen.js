@@ -60,7 +60,7 @@ const LoginScreen = () => {
                 <Text style={styles.alterLoginText}>Or, login with ...</Text>
 
                 {/* social media icons */}
-                <TouchableOpacity onPress={()=>{}}>
+                <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
                     <GoogleSVG height={24} width={24} />
                 </TouchableOpacity>
             </View>
@@ -124,6 +124,13 @@ const styles = StyleSheet.create({
         color: '#AD40AF',
         fontWeight: '700',
     },
+    socialMediaIcon:{
+        borderColor: '#ddd',
+        borderWidth: 2,
+        borderRadius: 10,
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+    },  
     
 })
 
