@@ -40,7 +40,7 @@ const LoginScreen = () => {
                 {/* password input */}
                 <View style={styles.loginInput}>
                     <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
-                    <TextInput placeholder='Password'style={styles.loginInputText} />
+                    <TextInput placeholder='Password'style={styles.loginInputText} secureTextEntry={true}/>
                 </View>
             </View>
             
