@@ -15,9 +15,9 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
       </Stack.Navigator> */}
 
-      {/* <AuthStack /> */}
+      <AuthStack />
 
-      <AppStack />
+      {/* <AppStack /> */}
     </NavigationContainer>
   );
 }
@@ -35,6 +35,7 @@ export default function App() {
 
 // icons
 //   - react native vector icons
+//   - https://oblador.github.io/react-native-vector-icons/
 //   - https://github.com/oblador/react-native-vector-icons
 
 // handle screens with multiple navigators
