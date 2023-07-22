@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // fonts
@@ -41,14 +41,30 @@ const LoginScreen = () => {
                 <View style={styles.loginInput}>
                     <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
                     <TextInput placeholder='Password'style={styles.loginInputText} secureTextEntry={true}/>
+                    <TouchableOpacity onPress={()=>{}}>
+                        <Text style={styles.passwdInputForgotText}>Forgot?</Text>
+                    </TouchableOpacity>
                 </View>
+                <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
+                    <Text style={styles.loginButtonText}>Login</Text>
+                </TouchableOpacity>
             </View>
-            
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
+    loginButton:{
+        backgroundColor: '#AD40AF',
+        padding: 20,
+        borderRadius: 10,
+        marginBottom: 30,
+
+    },
+    loginButtonText:{
+        textAlign: 'center',
+
+    },
     loginText:{
         fontSize: 28,
         fontFamily:'Roboto-Medium',
@@ -82,6 +98,10 @@ const styles = StyleSheet.create({
     mainContainer:{
         flex: 1,
         justifyContent: 'center',
+    },
+    passwdInputForgotText:{
+        color: '#AD40AF',
+        fontWeight: '700',
     },
     
 })
