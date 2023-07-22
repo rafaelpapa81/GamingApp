@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     }, 
     socialMediaContainer:{
         flexDirection: 'row',
+        justifyContent: 'space-between',
     },  
     
 })
