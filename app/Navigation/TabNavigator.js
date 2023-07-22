@@ -28,7 +28,9 @@ const HomeStack = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
-            <Stack.Screen name="GameDetails" component={GameDetailsScreen} />
+            <Stack.Screen name="GameDetails" component={GameDetailsScreen} options={({route}) => ({
+                title: route.params?.title,
+            })}/>
         </Stack.Navigator>
     )
 }
