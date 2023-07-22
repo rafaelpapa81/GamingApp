@@ -1,12 +1,12 @@
 import React from 'react';
 
 // navigators
-
 // this one manages the play/price button
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // this one manages the bottom icons 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+// this one will allow you to get options and routes within multiple navigators
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
 // import screens
 import HomeScreen from '../screens/HomeScreen';
@@ -44,11 +44,20 @@ const TabNavigator = () => {
             tabBarInactiveTintColor: '#fff',
             tabBarActiveTintColor: 'yellow'
         }}>
-            <Tab.Screen name='Home2' component={HomeStack} options={{
-                tabBarIcon: ({color, size}) => (
-                    <IoniconsIcon name='home-outline' color={color} size={size} />
-                )
-            }}/>
+            <Tab.Screen 
+                name='Home2'    
+                component={HomeStack} 
+                options={({route}) => ({
+                    //tabBarStyle: {display: 'none'}, // it has to be dynamic, because it disappear from homescreen
+                    tabBarStyle: {
+                        display: getTabBarVisibility(route),
+                        backgroundColor: '#AD40AF',
+                    },
+                    tabBarIcon: ({color, size}) => (
+                        <IoniconsIcon name='home-outline' color={color} size={size} />
+                    )
+                })}
+            />
             <Tab.Screen name='Cart' component={CartScreen} options={{
                 tabBarBadge: 3,
                 tabBarBadgeStyle: {backgroundColor: 'yellow'},
@@ -63,7 +72,21 @@ const TabNavigator = () => {
             }}/>
         </Tab.Navigator>
     );
+};
 
-}
+const getTabBarVisibility = (route) => {
+    // console.log(route);
+    const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
+    // console.log(routeName);
+
+    // based on the route name
+    //  whe want to display or not the bottom-tab navigator (dynamic behavior)
+    if( routeName == 'GameDetails' ) {
+        return 'none';
+    }
+
+    return 'flex';
+
+};
 
 export default TabNavigator;

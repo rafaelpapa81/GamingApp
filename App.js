@@ -36,3 +36,7 @@ export default function App() {
 // icons
 //   - react native vector icons
 //   - https://github.com/oblador/react-native-vector-icons
+
+// handle screens with multiple navigators
+//   get route and options
+//  - https://reactnavigation.org/docs/screen-options-resolution
