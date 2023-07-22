@@ -63,12 +63,14 @@ const styles = StyleSheet.create({
     },
     loginButtonText:{
         textAlign: 'center',
-
+        fontSize: 16,
+        fontWeight: '700',
+        color: '#fff',
     },
     loginText:{
         fontSize: 28,
         fontFamily:'Roboto-Medium',
-        fontWeight: 500,
+        fontWeight: '500',
         color: '#333',
         marginBottom: 30,
     },
