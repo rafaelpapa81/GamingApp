@@ -71,6 +71,15 @@ const LoginScreen = () => {
                         <TwitterSVG height={24} width={24} />
                     </TouchableOpacity>
                 </View>
+
+                {/* new to app section */}
+                <View style={styles.newToAppContainer}>
+                    <Text>New to the app?</Text>
+                    <TouchableOpacity onPress={()=>{}} >
+                        <Text style={styles.registerText}>Register</Text>
+                    </TouchableOpacity>
+                </View>
+                
                 
             </View>
         </SafeAreaView>
@@ -129,6 +138,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
     },
+    newToAppContainer:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 30,
+    },
     passwdInputForgotText:{
         color: '#AD40AF',
         fontWeight: '700',
@@ -143,7 +157,13 @@ const styles = StyleSheet.create({
     socialMediaContainer:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-    },  
+        marginBottom: 30,
+    },
+    registerText:{
+        color: '#AD40AF',
+        fontWeight: '700',
+        marginLeft: 5,
+    },
     
 })
 
