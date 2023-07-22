@@ -20,7 +20,8 @@ const TabNavigator = () => {
         <Tab.Navigator screenOptions={{
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarStyle: {backgroundColor: '#AD40AF'}
+            tabBarStyle: {backgroundColor: '#AD40AF'},
+            tabBarInactiveTintColor: '#fff'
         }}>
             <Tab.Screen name='Home2' component={HomeScreen} options={{
                 tabBarIcon: ({color, size}) => (
