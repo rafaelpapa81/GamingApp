@@ -32,11 +32,13 @@ const LoginScreen = () => {
                     <LoginSVG height={300} width={300} style={styles.loginSVGImg}/>
                 </View>
                 <Text style={styles.loginText}>Login</Text>
+                
                 {/* username input */}
                 <View style={styles.loginInput}>
                     <MaterialIcons name='alternate-email' size={20} color={'#666'} style={styles.loginInputIcon} />
                     <TextInput placeholder='Email ID'style={styles.loginInputText} keyboardType='email-address'/>
                 </View>
+                
                 {/* password input */}
                 <View style={styles.loginInput}>
                     <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
@@ -45,21 +47,30 @@ const LoginScreen = () => {
                         <Text style={styles.passwdInputForgotText}>Forgot?</Text>
                     </TouchableOpacity>
                 </View>
+                
+                {/* login button */}
                 <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
                     <Text style={styles.loginButtonText}>Login</Text>
                 </TouchableOpacity>
+                
+                {/* alternative login msg */}
+                <Text style={styles.alterLoginText}>Or, login with ...</Text>
             </View>
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
+    alterLoginText:{
+        textAlign: 'center',
+        color: '#666',
+        marginBottom: 30,
+    },
     loginButton:{
         backgroundColor: '#AD40AF',
         padding: 20,
         borderRadius: 10,
         marginBottom: 30,
-
     },
     loginButtonText:{
         textAlign: 'center',
