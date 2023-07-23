@@ -113,6 +113,14 @@ const RegisterScreen = ({navigation}) => {
                     <Text style={styles.loginButtonText}>Register</Text>
                 </TouchableOpacity> */}
 
+                {/* date of birth */}
+                <View style={styles.dateInput}>
+                    <IoniconsIcon name='calendar-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
+                    <TouchableOpacity onPress={()=>{}}>
+                        <Text style={styles.dateInputText}>Date of Birth</Text>
+                    </TouchableOpacity>
+                </View>
+
                 {/* register button */}
                 <CustomButton label={'Register'} onPress={() => {}}/>
                 
@@ -135,6 +143,18 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#666',
         marginBottom: 30,
+    },
+    dateInput:{
+        flexDirection: 'row',
+        borderBottomColor: '#ccc',
+        borderBottomWidth: 1,
+        paddingBottom: 8,
+        marginBottom: 30,
+    },
+    dateInputText:{
+        color: '#666',
+        marginLeft: 5,
+        // marginTop: 5,
     },
     loginButton:{
         backgroundColor: '#AD40AF',
