@@ -9,14 +9,18 @@ import { useFonts } from 'expo-font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
+// components
+import InputField from '../components/InputField';
+
 // svg images
 import LoginSVG from '../assets/images/misc/login.svg';
 import GoogleSVG from '../assets/images/misc/google.svg';
 import FacebookSVG from '../assets/images/misc/facebook.svg';
 import TwitterSVG from '../assets/images/misc/twitter.svg';
 
-// I am not using custom-build components here just for learning purposes
+// I am not using all custom-build components here just for learning purposes
 //   you may find them all inside the RegisterScreen
+//   I added the password field to be able to use fieldButton label and function props
 const LoginScreen = ({navigation}) => {
 
     //-----------------------
@@ -45,13 +49,24 @@ const LoginScreen = ({navigation}) => {
                 </View>
                 
                 {/* password input */}
-                <View style={styles.loginInput}>
+                {/* <View style={styles.loginInput}>
                     <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
                     <TextInput placeholder='Password'style={styles.loginInputText} secureTextEntry={true}/>
                     <TouchableOpacity onPress={()=>{}}>
                         <Text style={styles.passwdInputForgotText}>Forgot?</Text>
                     </TouchableOpacity>
-                </View>
+                </View> */}
+
+                {/* password input */}
+                <InputField 
+                    label={'Password'} 
+                    icon={
+                        <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
+                    }
+                    inputType={'password'}
+                    fieldButtonLabel={'Forgot?'}
+                    fieldButtonFunction={() => {}}
+                />
                 
                 {/* login button */}
                 <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
