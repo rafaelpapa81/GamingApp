@@ -15,7 +15,7 @@ import GoogleSVG from '../assets/images/misc/google.svg';
 import FacebookSVG from '../assets/images/misc/facebook.svg';
 import TwitterSVG from '../assets/images/misc/twitter.svg';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
 
     //-----------------------
     // load font
@@ -75,7 +75,7 @@ const LoginScreen = () => {
                 {/* new to app section */}
                 <View style={styles.newToAppContainer}>
                     <Text>New to the app?</Text>
-                    <TouchableOpacity onPress={()=>{}} >
+                    <TouchableOpacity onPress={()=>navigation.navigate('Register')} >
                         <Text style={styles.registerText}>Register</Text>
                     </TouchableOpacity>
                 </View>

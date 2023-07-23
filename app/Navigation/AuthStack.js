@@ -8,6 +8,7 @@ const Stack = createNativeStackNavigator();
 // import screens
 import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 
 const AuthStack = () => {
     return (
@@ -19,6 +20,10 @@ const AuthStack = () => {
             <Stack.Screen 
                 name="Login" 
                 component={LoginScreen} 
+            />
+            <Stack.Screen 
+                name="Register" 
+                component={RegisterScreen} 
             />
         </Stack.Navigator>
     )
