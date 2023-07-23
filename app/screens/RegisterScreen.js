@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // fonts
@@ -36,7 +36,7 @@ const RegisterScreen = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.mainContainer}>
-            <View style={styles.loginImgTextContainer}>
+            <ScrollView style={styles.loginImgTextContainer}>
                 <View style={styles.loginSVGImgContainer}>
                     <RegistrationSVG height={300} width={300} style={styles.loginSVGImg}/>
                 </View>
@@ -125,7 +125,7 @@ const RegisterScreen = ({navigation}) => {
                 </View>
                 
                 
-            </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }
