@@ -36,7 +36,7 @@ const RegisterScreen = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.mainContainer}>
-            <ScrollView style={styles.loginImgTextContainer}>
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.loginImgTextContainer}>
                 <View style={styles.loginSVGImgContainer}>
                     <RegistrationSVG height={300} width={300} style={styles.loginSVGImg}/>
                 </View>
