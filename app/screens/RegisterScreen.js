@@ -15,7 +15,7 @@ import GoogleSVG from '../assets/images/misc/google.svg';
 import FacebookSVG from '../assets/images/misc/facebook.svg';
 import TwitterSVG from '../assets/images/misc/twitter.svg';
 
-const LoginScreen = () => {
+const RegisterScreen = ({navigation}) => {
 
     //-----------------------
     // load font
@@ -34,7 +34,7 @@ const LoginScreen = () => {
                 <View style={styles.loginSVGImgContainer}>
                     <RegistrationSVG height={300} width={300} style={styles.loginSVGImg}/>
                 </View>
-                <Text style={styles.loginText}>Login</Text>
+                <Text style={styles.loginText}>Register</Text>
                 
                 {/* username input */}
                 <View style={styles.loginInput}>
@@ -74,9 +74,9 @@ const LoginScreen = () => {
 
                 {/* new to app section */}
                 <View style={styles.newToAppContainer}>
-                    <Text>New to the app?</Text>
-                    <TouchableOpacity onPress={()=>{}} >
-                        <Text style={styles.registerText}>Register</Text>
+                    <Text>Already registered?</Text>
+                    <TouchableOpacity onPress={()=>navigation.goBack()} >
+                        <Text style={styles.registerText}>Login</Text>
                     </TouchableOpacity>
                 </View>
                 
@@ -167,4 +167,4 @@ const styles = StyleSheet.create({
     
 })
 
-export default LoginScreen;
+export default RegisterScreen;
