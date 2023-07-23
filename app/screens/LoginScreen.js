@@ -15,6 +15,8 @@ import GoogleSVG from '../assets/images/misc/google.svg';
 import FacebookSVG from '../assets/images/misc/facebook.svg';
 import TwitterSVG from '../assets/images/misc/twitter.svg';
 
+// I am not using custom-build components here just for learning purposes
+//   you may find them all inside the RegisterScreen
 const LoginScreen = ({navigation}) => {
 
     //-----------------------

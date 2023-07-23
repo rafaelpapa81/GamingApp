@@ -11,12 +11,14 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
 // components
 import InputField from '../components/InputField';
+import CustomButton from '../components/CustomButton';
 
 // svg images
 import RegistrationSVG from '../assets/images/misc/registration.svg';
 import GoogleSVG from '../assets/images/misc/google.svg';
 import FacebookSVG from '../assets/images/misc/facebook.svg';
 import TwitterSVG from '../assets/images/misc/twitter.svg';
+
 
 
 const RegisterScreen = ({navigation}) => {
@@ -90,11 +92,13 @@ const RegisterScreen = ({navigation}) => {
                     inputType={'password'}
                 />
                 
-                
-                {/* login button */}
-                <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
+                {/* register button */}
+                {/* <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
                     <Text style={styles.loginButtonText}>Register</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
+
+                {/* register button */}
+                <CustomButton label={'Register'} onPress={() => {}}/>
                 
                 {/* alternative login msg */}
                 <Text style={styles.alterLoginText}>Or, login with ...</Text>
