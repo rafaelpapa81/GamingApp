@@ -41,10 +41,10 @@ const RegisterScreen = ({navigation}) => {
                 <Text style={styles.loginText}>Register</Text>
                 
                 {/* username input */}
-                <View style={styles.loginInput}>
+                {/* <View style={styles.loginInput}>
                     <MaterialIcons name='alternate-email' size={20} color={'#666'} style={styles.loginInputIcon} />
                     <TextInput placeholder='Email ID'style={styles.loginInputText} keyboardType='email-address'/>
-                </View>
+                </View> */}
 
                 {/* person full name */}
                 <InputField 
@@ -53,20 +53,47 @@ const RegisterScreen = ({navigation}) => {
                         <IoniconsIcon name='person-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
                     }
                 />
-                
+
+                {/* email id */}
+                <InputField 
+                    label={'Email ID'} 
+                    icon={
+                        <MaterialIcons name='alternate-email' size={20} color={'#666'} style={styles.loginInputIcon} />
+                    }
+                    keyboardType={'email-address'}
+                />
+
                 {/* password input */}
-                <View style={styles.loginInput}>
+                {/* <View style={styles.loginInput}>
                     <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
                     <TextInput placeholder='Password'style={styles.loginInputText} secureTextEntry={true}/>
                     <TouchableOpacity onPress={()=>{}}>
                         <Text style={styles.passwdInputForgotText}>Forgot?</Text>
                     </TouchableOpacity>
-                </View>
+                </View> */}
+
+                {/* password input */}
+                <InputField 
+                    label={'Password'} 
+                    icon={
+                        <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
+                    }
+                    inputType={'password'}
+                />
+
+                {/* confirm password input */}
+                <InputField 
+                    label={'Confirm Password'} 
+                    icon={
+                        <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
+                    }
+                    inputType={'password'}
+                />
                 
                 
                 {/* login button */}
                 <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
-                    <Text style={styles.loginButtonText}>Login</Text>
+                    <Text style={styles.loginButtonText}>Register</Text>
                 </TouchableOpacity>
                 
                 {/* alternative login msg */}
