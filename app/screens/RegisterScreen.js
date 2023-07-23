@@ -9,11 +9,15 @@ import { useFonts } from 'expo-font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
+// components
+import InputField from '../components/InputField';
+
 // svg images
 import RegistrationSVG from '../assets/images/misc/registration.svg';
 import GoogleSVG from '../assets/images/misc/google.svg';
 import FacebookSVG from '../assets/images/misc/facebook.svg';
 import TwitterSVG from '../assets/images/misc/twitter.svg';
+
 
 const RegisterScreen = ({navigation}) => {
 
@@ -41,6 +45,14 @@ const RegisterScreen = ({navigation}) => {
                     <MaterialIcons name='alternate-email' size={20} color={'#666'} style={styles.loginInputIcon} />
                     <TextInput placeholder='Email ID'style={styles.loginInputText} keyboardType='email-address'/>
                 </View>
+
+                {/* person full name */}
+                <InputField 
+                    label={'Full Name'} 
+                    icon={
+                        <IoniconsIcon name='person-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
+                    }
+                />
                 
                 {/* password input */}
                 <View style={styles.loginInput}>
@@ -50,6 +62,7 @@ const RegisterScreen = ({navigation}) => {
                         <Text style={styles.passwdInputForgotText}>Forgot?</Text>
                     </TouchableOpacity>
                 </View>
+                
                 
                 {/* login button */}
                 <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
