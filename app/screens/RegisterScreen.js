@@ -41,6 +41,22 @@ const RegisterScreen = ({navigation}) => {
                     <RegistrationSVG height={300} width={300} style={styles.loginSVGImg}/>
                 </View>
                 <Text style={styles.loginText}>Register</Text>
+
+                {/* social media icons */}
+                <View style={styles.socialMediaContainer}>
+                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                        <GoogleSVG height={24} width={24} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                        <FacebookSVG height={24} width={24} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
+                        <TwitterSVG height={24} width={24} />
+                    </TouchableOpacity>
+                </View>
+
+                {/* alternative login msg */}
+                <Text style={styles.alterLoginText}>Or, register with email ...</Text>
                 
                 {/* username input */}
                 {/* <View style={styles.loginInput}>
@@ -100,22 +116,6 @@ const RegisterScreen = ({navigation}) => {
                 {/* register button */}
                 <CustomButton label={'Register'} onPress={() => {}}/>
                 
-                {/* alternative login msg */}
-                <Text style={styles.alterLoginText}>Or, login with ...</Text>
-
-                {/* social media icons */}
-                <View style={styles.socialMediaContainer}>
-                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
-                        <GoogleSVG height={24} width={24} />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
-                        <FacebookSVG height={24} width={24} />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={()=>{}} style={styles.socialMediaIcon}>
-                        <TwitterSVG height={24} width={24} />
-                    </TouchableOpacity>
-                </View>
-
                 {/* new to app section */}
                 <View style={styles.newToAppContainer}>
                     <Text>Already registered?</Text>
