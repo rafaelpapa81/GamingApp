@@ -4,10 +4,16 @@ import React from 'react'
 export default function InputField({label, icon, inputType, keyboardType, fieldButtonLabel, fieldButtonFunction}) {
     return (
         <View style={styles.loginInput}>
-            <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
-            <TextInput placeholder='Password'style={styles.loginInputText} secureTextEntry={true}/>
-            <TouchableOpacity onPress={()=>{}}>
-                <Text style={styles.passwdInputForgotText}>Forgot?</Text>
+            {/* <IoniconsIcon name='ios-lock-closed-outline' size={20} color={'#666'} style={styles.loginInputIcon} /> */}
+            {icon}
+            {/* <TextInput placeholder='Password'style={styles.loginInputText} secureTextEntry={true}/> */}
+            {inputType == 'password' ? (
+                <TextInput placeholder={label} keyboardType={keyboardType} style={styles.loginInputText} secureTextEntry={true}/>
+            ) : (
+                <TextInput placeholder={label} keyboardType={keyboardType} style={styles.loginInputText}/>
+            )}
+            <TouchableOpacity onPress={fieldButtonFunction}>
+                <Text style={styles.passwdInputForgotText}>{fieldButtonLabel}</Text>
             </TouchableOpacity>
         </View>
     )
