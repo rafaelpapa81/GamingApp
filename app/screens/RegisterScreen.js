@@ -28,6 +28,7 @@ const RegisterScreen = ({navigation}) => {
 
     const [date, setDate] = useState(new Date());
     const [open, setOpen] = useState(false);
+    const [dobLabel, setDobLabel] = useState('Date of Birth');
 
     //-----------------------
     // load font
@@ -123,7 +124,7 @@ const RegisterScreen = ({navigation}) => {
                 <View style={styles.dateInput}>
                     <IoniconsIcon name='calendar-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
                     <TouchableOpacity onPress={()=>setOpen(true)}>
-                        <Text style={styles.dateInputText}>Date of Birth</Text>
+                        <Text style={styles.dateInputText}>{dobLabel}</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -133,8 +134,9 @@ const RegisterScreen = ({navigation}) => {
                     date={date}
                     mode={'date'}
                     onConfirm={(date) => {
-                        setOpen(false)
-                        setDate(date)
+                        setOpen(false);
+                        setDate(date);
+                        setDobLabel(date.toDateString());
                     }}
                     onCancel={() => {
                         setOpen(false)
