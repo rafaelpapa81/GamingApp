@@ -133,6 +133,8 @@ const RegisterScreen = ({navigation}) => {
                     open={open}
                     date={date}
                     mode={'date'}
+                    maximumDate={new Date("2005-01-01")}
+                    minimumDate={new Date("1980-01-01")}
                     onConfirm={(date) => {
                         setOpen(false);
                         setDate(date);
