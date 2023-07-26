@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+// external date-picker
+import DatePicker from 'react-native-date-picker'
 
 // fonts
 import { useFonts } from 'expo-font';
@@ -22,6 +25,9 @@ import TwitterSVG from '../assets/images/misc/twitter.svg';
 
 
 const RegisterScreen = ({navigation}) => {
+
+    const [date, setDate] = useState(new Date());
+    const [open, setOpen] = useState(false);
 
     //-----------------------
     // load font
@@ -116,10 +122,23 @@ const RegisterScreen = ({navigation}) => {
                 {/* date of birth */}
                 <View style={styles.dateInput}>
                     <IoniconsIcon name='calendar-outline' size={20} color={'#666'} style={styles.loginInputIcon} />
-                    <TouchableOpacity onPress={()=>{}}>
+                    <TouchableOpacity onPress={()=>setOpen(true)}>
                         <Text style={styles.dateInputText}>Date of Birth</Text>
                     </TouchableOpacity>
                 </View>
+
+                {/* <DatePicker
+                    modal
+                    open={open}
+                    date={date}
+                    onConfirm={(date) => {
+                        setOpen(false)
+                        setDate(date)
+                    }}
+                    onCancel={() => {
+                        setOpen(false)
+                    }}
+                /> */}
 
                 {/* register button */}
                 <CustomButton label={'Register'} onPress={() => {}}/>
