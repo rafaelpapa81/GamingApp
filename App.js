@@ -1,27 +1,18 @@
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native'
 
-// import navigation
-//   the stack will be chosen accordinly after authentication
-//import AuthStack from './app/Navigation/AuthStack';
-import AuthStack from './app/navigation/AuthStack'
-import AppStack from './app/navigation/AppStack';
+import { AuthProvider } from './app/context/AuthContext';
+import AppNav from './app/navigation/AppNav';
 
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      {/* <Stack.Navigator initialRouteName='Main'>
-        <Stack.Screen name="Onboarding" component={Onboarding} options={{headerShown:false}} />
-        <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
-      </Stack.Navigator> */}
-
-      <AuthStack />
-
-      {/* <AppStack /> */}
-    </NavigationContainer>
-  );
+function App() {
+    return (
+        <AuthProvider>
+            <AppNav />
+        </AuthProvider>
+    );
 }
+
+export default App;
 
 // snippets
 //  -install extension: React Native Tools
