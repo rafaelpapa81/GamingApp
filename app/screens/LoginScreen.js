@@ -27,7 +27,7 @@ import { AuthContext } from '../context/AuthContext';
 const LoginScreen = ({navigation}) => {
 
     // context hook
-    const {test} = useContext(AuthContext);
+    const {login} = useContext(AuthContext);
 
     //-----------------------
     // load font
@@ -47,7 +47,6 @@ const LoginScreen = ({navigation}) => {
                     <LoginSVG height={300} width={300} style={styles.loginSVGImg}/>
                 </View>
                 <Text style={styles.loginText}>Login</Text>
-                <Text>{test}</Text>
                 
                 {/* username input */}
                 <View style={styles.loginInput}>
@@ -76,7 +75,7 @@ const LoginScreen = ({navigation}) => {
                 />
                 
                 {/* login button */}
-                <TouchableOpacity onPress={()=>{}} style={styles.loginButton}>
+                <TouchableOpacity onPress={()=>{login()}} style={styles.loginButton}>
                     <Text style={styles.loginButtonText}>Login</Text>
                 </TouchableOpacity>
                 
