@@ -3,8 +3,9 @@ import { NavigationContainer } from '@react-navigation/native'
 
 // import navigation
 //   the stack will be chosen accordinly after authentication
-import AuthStack from './app/Navigation/AuthStack';
-import AppStack from './app/Navigation/AppStack';
+//import AuthStack from './app/Navigation/AuthStack';
+import AuthStack from './app/navigation/AuthStack'
+import AppStack from './app/navigation/AppStack';
 
 
 export default function App() {
