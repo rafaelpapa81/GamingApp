@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -18,10 +18,16 @@ import GoogleSVG from '../assets/images/misc/google.svg';
 import FacebookSVG from '../assets/images/misc/facebook.svg';
 import TwitterSVG from '../assets/images/misc/twitter.svg';
 
+// authentication property
+import { AuthContext } from '../context/AuthContext';
+
 // I am not using all custom-build components here just for learning purposes
 //   you may find them all inside the RegisterScreen
 //   I added the password field to be able to use fieldButton label and function props
 const LoginScreen = ({navigation}) => {
+
+    // context hook
+    const {test} = useContext(AuthContext);
 
     //-----------------------
     // load font
@@ -41,6 +47,7 @@ const LoginScreen = ({navigation}) => {
                     <LoginSVG height={300} width={300} style={styles.loginSVGImg}/>
                 </View>
                 <Text style={styles.loginText}>Login</Text>
+                <Text>{test}</Text>
                 
                 {/* username input */}
                 <View style={styles.loginInput}>
